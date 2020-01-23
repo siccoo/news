@@ -1,3 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-export const App = () => <p>Hello</p>
+export const App = () => {
+  const [storyIds, setStoryIds] = useState([]);
+  return (
+    <p>Hello</p>
+  )
+}
