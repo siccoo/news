@@ -10,7 +10,12 @@ export const StoriesContainer = () => {
     getStory(20970623).then(data => console.log(data));
   }, []);
 
-  return storyIds.map(storyId => (
-    <Story key={storyId} storyId={storyId} /> 
-  ));
+  return ( 
+      <>
+        <h1>Hacker News Stories</h1>
+        {storyIds.map(storyId => (
+          <Story key={storyId} storyId={storyId} /> 
+        ))}
+      </>
+  );
 }
