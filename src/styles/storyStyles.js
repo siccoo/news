@@ -21,3 +21,19 @@ export const StoryWrapper = styled.section`
         padding-bottom: 0;
     }
 `;
+
+// TITLE & META (time / by) 
+export const StoryTitle = styled.h1`
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.8;
+    margin: 0;
+    text-decoration: none;
+
+    a {
+        color: #2e2e2c;
+        background-color: #f8dc3d;
+        text-decoration: none;
+    }
+`
