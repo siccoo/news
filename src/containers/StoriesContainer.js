@@ -5,7 +5,7 @@ export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStoryIds().then(data => setStoryIds(data));
+    getStoryIds().then(source => setStoryIds(source));
     getStory(20970623).then(data => console.log(data));
   }, []);
 
