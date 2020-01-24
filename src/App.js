@@ -5,7 +5,9 @@ export const App = () => {
   const [storyIds, setStoryIds] = useState([]);
 
   useEffect(() => {
-    getStoryIds().then(data => data && setStoryIds(data))
+    getStoryIds().then(source => setStoryIds(source));
+    console.log('useEffect here!');
+    
   }, []);
 
   return (

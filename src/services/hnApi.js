@@ -6,7 +6,7 @@ export const storyUrl = `${baseUrl}item/`;
 
 export const getStoryIds = async () => {
     // MAKING A CALL TO THE HACKER NEWS API USING AXIOS
-    const result = await axios.get(newStoriesUrl).then(data => data);
+    const result = await axios.get(newStoriesUrl).then(({ data }) => data);
 
     return result;
 }
