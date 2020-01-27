@@ -8,7 +8,7 @@ export const StoriesContainer = () => {
 
   useEffect(() => {
     getStoryIds().then(source => setStoryIds(source));
-    getStory(20970623).then(data => console.log(data));
+    // getStory(20970623).then(data => console.log(data));
   }, []);
 
   return ( 
