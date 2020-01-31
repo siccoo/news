@@ -6,7 +6,7 @@ import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 
 export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
-  const test = useInfiniteScroll();
+  const { count } = useInfiniteScroll();
 
   useEffect(() => {
     getStoryIds().then(source => setStoryIds(source));
@@ -18,7 +18,7 @@ export const StoriesContainer = () => {
       <GlobalStyle />
       <StoriesContainerWrapper data-test-id="stories-container">
         <h1>Hacker News Stories</h1>
-        {storyIds.map(storyId => (
+        {storyIds.slice(0, count).map(storyId => (
           <Story key={storyId} storyId={storyId} /> 
         ))}
       </StoriesContainerWrapper>
