@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { getStoryIds, getStory } from '../services/hnApi';
 import { Story } from '../components/Story';
 import { GlobalStyle, StoriesContainerWrapper } from '../styles/StoriesContainerStyles';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 
 export const StoriesContainer = () => {
-  const [storyIds, setStoryIds] = useState([]);
   const { count } = useInfiniteScroll();
+  const [storyIds, setStoryIds] = useState([]);
+  
 
   useEffect(() => {
     getStoryIds().then(source => setStoryIds(source));
-    // getStory(20970623).then(data => console.log(data));
-  }, []);
+    console.log('count', count);
+  }, [count]);
 
   return ( 
       <>
