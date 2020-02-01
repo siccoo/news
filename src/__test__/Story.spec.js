@@ -16,9 +16,9 @@ jest.mock('../services/hnApi', () => ({
 test('renders the story component with content', async () => {
     getStory.mockImplemetation(() => Promise.resolve(singularStory));
     
-        const { getByText, queryByTestId } = render(<Story storyId="1" />);
+        const { getByText, queryByTestId, getByTestId } = render(<Story storyId="1" />);
         await waitForElement(() => [
-            expect(queryByTestId('story')).toBeTruthy(),
+            expect(getByTestId('story')).toBeTruthy(),
             expect(getByText('Tarnished: Google Responds')).toBeTruthy(),
             expect(queryByTestId('story-by').textContent).toEqual('By: Karl Hadwen'),
         ]);
