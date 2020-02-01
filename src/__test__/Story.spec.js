@@ -4,7 +4,10 @@ import { Story } from '../components/Story';
 import { singularStory } from '../fixtures';
 import { getStory } from '../services/hnApi';
 
-beforeEach(cleanup);
+beforeEach(() => {
+    cleanup();
+    jest.resetAllMocks();
+});
 
 jest.mock('../services/hnApi', () => ({
     getStory: jest.fn(),
