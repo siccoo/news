@@ -7,7 +7,14 @@ describe('HackerNews Api', () => {
         jest.resetAllMocks();
     });
 
-    describe('getStory', () => {
+    describe('getStory functionality', () => {
+        it('request and get a story from HackerNews Api', async () => {
+            axios.get.mockImplementation(() => {
+                Promise.resolve({ data: { ...singularStory } })
+            });
 
+            const entity = await getStory(1);
+            expect(axios.get).toHaveBeenCalledTimes(1);
+        })
     });
 });
