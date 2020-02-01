@@ -15,6 +15,8 @@ describe('HackerNews Api', () => {
 
             const entity = await getStory(1);
             expect(axios.get).toHaveBeenCalledTimes(1);
+            expect(axios.get).toHaveBeenCalledWith(`${storyUrl + 1}.json`);
+            expect(entity).toEqual(singularStory);
         })
     });
 });
