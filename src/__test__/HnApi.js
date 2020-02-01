@@ -29,7 +29,20 @@ describe('HackerNews Api', () => {
             const entity = await getStory(1);
             expect(axios.get).toHaveBeenCalledTimes(1);
             expect(axios.get).toHaveBeenCalledWith(`${storyUrl + 1}.json`);
-            expect(entity).toEqual(singularStory);
-        })
+            expect(entity).toEqual(emptySingularStory);
+        });
+    });
+
+    describe('getStoryIds', () => {
+        it('request and gets story ids from HackerNews Api', async () => {
+            axios.get.mockImplementation(() => {
+                Promise.resolve({ data: storyIds })
+            });
+
+            const entity = await getStoryIds();
+            expect(axios.get).toHaveBeenCalledTimes(1);
+            expect(axios.get).toHaveBeenCalledWith(newStoriesUrl);
+            expect(entity).toEqual(storyIds);
     });
 });
+});  
